@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://p25cmynrcd4c"
-path="res://.godot/imported/move_left.png-1ec3ac89998548c804462e668f9b0f5f.ctex"
+uid="uid://bqksoky2qex5m"
+path="res://.godot/imported/connor_boss.png-f4a376d075282f515e8f7378011cff31.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/move_left.png"
-dest_files=["res://.godot/imported/move_left.png-1ec3ac89998548c804462e668f9b0f5f.ctex"]
+source_file="res://images/connor/connor_boss.png"
+dest_files=["res://.godot/imported/connor_boss.png-f4a376d075282f515e8f7378011cff31.ctex"]
 
 [params]
 

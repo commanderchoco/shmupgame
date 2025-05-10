@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://dkx2qbdjg3cjj"]
 
 [ext_resource type="Script" uid="uid://bepmq7n2t4vof" path="res://TaigaBullet.gd" id="1_2sbsu"]
-[ext_resource type="Texture2D" uid="uid://rpvrnl7727ll" path="res://images/shot.png" id="2_ubyfm"]
-[ext_resource type="Texture2D" uid="uid://by8dcu0se4ibk" path="res://images/shot2.png" id="3_qyhfc"]
-[ext_resource type="Texture2D" uid="uid://c3rj6q85p8dfd" path="res://images/shot3.png" id="4_hb7gh"]
+[ext_resource type="Texture2D" uid="uid://rpvrnl7727ll" path="res://images/taiga/shot.png" id="2_ubyfm"]
+[ext_resource type="Texture2D" uid="uid://by8dcu0se4ibk" path="res://images/taiga/shot2.png" id="3_qyhfc"]
+[ext_resource type="Texture2D" uid="uid://c3rj6q85p8dfd" path="res://images/taiga/shot3.png" id="4_hb7gh"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_djeyk"]
 animations = [{

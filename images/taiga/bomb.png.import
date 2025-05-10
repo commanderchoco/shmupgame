@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bm01c8o17s1w2"
-path="res://.godot/imported/portrait.png-2ee19a308781be8204af9bd51b64077e.ctex"
+uid="uid://rw1xqbw682vk"
+path="res://.godot/imported/bomb.png-ee503db1967ab0be3260452422c63c4d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://images/portrait.png"
-dest_files=["res://.godot/imported/portrait.png-2ee19a308781be8204af9bd51b64077e.ctex"]
+source_file="res://images/taiga/bomb.png"
+dest_files=["res://.godot/imported/bomb.png-ee503db1967ab0be3260452422c63c4d.ctex"]
 
 [params]
 

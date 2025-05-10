@@ -1,9 +1,9 @@
 [gd_scene load_steps=7 format=3 uid="uid://djfoodl5l5iym"]
 
-[ext_resource type="Texture2D" uid="uid://c4dj3yit7ufdw" path="res://images/idle.png" id="1_62wml"]
+[ext_resource type="Texture2D" uid="uid://c4dj3yit7ufdw" path="res://images/taiga/idle.png" id="1_62wml"]
 [ext_resource type="Script" uid="uid://bdv0b5i1amim8" path="res://shoot.gd" id="1_ytqjl"]
-[ext_resource type="Texture2D" uid="uid://p25cmynrcd4c" path="res://images/move_left.png" id="3_73a0l"]
-[ext_resource type="Texture2D" uid="uid://bhdo2g3wstrxi" path="res://images/move_right.png" id="4_v5pym"]
+[ext_resource type="Texture2D" uid="uid://p25cmynrcd4c" path="res://images/taiga/move_left.png" id="3_73a0l"]
+[ext_resource type="Texture2D" uid="uid://bhdo2g3wstrxi" path="res://images/taiga/move_right.png" id="4_v5pym"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2l6ss"]
 animations = [{
@@ -45,7 +45,7 @@ scale = Vector2(0.5, 0.5)
 [node name="Taiga" type="AnimatedSprite2D" parent="Player"]
 sprite_frames = SubResource("SpriteFrames_2l6ss")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+[node name="Hurtbox" type="CollisionShape2D" parent="Player"]
 shape = SubResource("CapsuleShape2D_h6m1n")
 
 [node name="ShotStart1" type="Marker2D" parent="Player"]
