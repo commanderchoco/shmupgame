@@ -1,0 +1,106 @@
+[gd_scene load_steps=12 format=3 uid="uid://dwsq4x8jqtxqh"]
+
+[ext_resource type="Script" uid="uid://c1q7baegh4odf" path="res://Taiga.gd" id="1_akgou"]
+[ext_resource type="Texture2D" uid="uid://c4dj3yit7ufdw" path="res://images/taiga/idle.png" id="2_04j7d"]
+[ext_resource type="Script" uid="uid://dbwii57slcsgs" path="res://taiga_char.gd" id="2_yrx18"]
+[ext_resource type="Texture2D" uid="uid://dtetv00qrtboj" path="res://images/taiga/movement.png" id="3_yrx18"]
+[ext_resource type="Texture2D" uid="uid://c8bdgyakg63wp" path="res://images/taiga/hurtbox.png" id="4_8mjet"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qd83"]
+atlas = ExtResource("3_yrx18")
+region = Rect2(186, 0, 186, 306)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u635w"]
+atlas = ExtResource("3_yrx18")
+region = Rect2(0, 0, 186, 306)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86i5j"]
+atlas = ExtResource("3_yrx18")
+region = Rect2(372, 0, 186, 306)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2l6ss"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_04j7d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qd83")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u635w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qd83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86i5j")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86i5j")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_u635w"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h6m1n"]
+radius = 49.5
+height = 244.0
+
+[node name="TaigaNode2D" type="Node2D"]
+script = ExtResource("1_akgou")
+
+[node name="Player" type="CharacterBody2D" parent="."]
+script = ExtResource("2_yrx18")
+
+[node name="Taiga" type="AnimatedSprite2D" parent="Player"]
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_2l6ss")
+animation = &"right"
+
+[node name="ShotStart1" type="Marker2D" parent="Player"]
+position = Vector2(0, -50)
+scale = Vector2(0.5, 0.5)
+
+[node name="ShotStart2" type="Marker2D" parent="Player"]
+position = Vector2(10, -50)
+rotation = 0.523599
+scale = Vector2(0.5, 0.5)
+
+[node name="ShotStart3" type="Marker2D" parent="Player"]
+position = Vector2(-10, -50)
+rotation = -0.523599
+scale = Vector2(0.5, 0.5)
+
+[node name="HurtBox" type="CollisionShape2D" parent="Player"]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CircleShape2D_u635w")
+
+[node name="HurtBoxCircle" type="Sprite2D" parent="Player/HurtBox"]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("4_8mjet")
+
+[node name="Area2D" type="Area2D" parent="Player"]
+collision_layer = 8
+
+[node name="GrazeBox" type="CollisionShape2D" parent="Player/Area2D"]
+scale = Vector2(0.5, 0.5)
+shape = SubResource("CapsuleShape2D_h6m1n")
