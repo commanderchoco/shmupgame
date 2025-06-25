@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://dfmfekkdbx8g6"]
+
+[ext_resource type="Texture2D" uid="uid://drogr7ls48rob" path="res://images/User_Interface/user_interface.png" id="1_kmyur"]
+[ext_resource type="PackedScene" uid="uid://dwsq4x8jqtxqh" path="res://taiga.tscn" id="3_bur6v"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bur6v"]
+size = Vector2(254.863, 1074.37)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y5p4f"]
+size = Vector2(1303.89, 25.3451)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a5043"]
+size = Vector2(39.4258, 1072.96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2eh4v"]
+size = Vector2(1329.23, 46.4667)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1031.5, 387.5)
+scale = Vector2(0.710185, 0.710185)
+shape = SubResource("RectangleShape2D_bur6v")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(496, 16.0003)
+scale = Vector2(0.710185, 0.710185)
+shape = SubResource("RectangleShape2D_y5p4f")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(17.0006, 381)
+scale = Vector2(0.710185, 0.710185)
+shape = SubResource("RectangleShape2D_a5043")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(482, 752.5)
+scale = Vector2(0.710185, 0.710185)
+shape = SubResource("RectangleShape2D_2eh4v")
+
+[node name="UserInterface" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(681.778, 385.5)
+scale = Vector2(0.710185, 0.710185)
+texture = ExtResource("1_kmyur")
+
+[node name="TaigaNode2D" parent="." groups=["Players"] instance=ExtResource("3_bur6v")]
+position = Vector2(498, 558)
+scale = Vector2(1, 1)
