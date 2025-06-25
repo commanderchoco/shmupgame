@@ -25,5 +25,8 @@ height = 238.0
 position = Vector2(9, 11)
 sprite_frames = SubResource("SpriteFrames_nj00w")
 
-[node name="Hurtbox" type="CollisionShape2D" parent="Boss"]
+[node name="HurtBox" type="CollisionShape2D" parent="Boss"]
 shape = SubResource("CapsuleShape2D_pb7t2")
+
+[node name="BulletSpawn" type="Marker2D" parent="Boss"]
+position = Vector2(60, -81)
