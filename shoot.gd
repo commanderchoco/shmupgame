@@ -4,7 +4,8 @@ signal hit
 @export var speed = 1000
 var TaigaBullet_scene = preload("res://TaigaBullet.tscn")
 var screen_size
-var canShoot = true
+const SHOT_READY = 5
+var shot_timer = SHOT_READY
 
 
 # Called when the node enters the scene tree for the first time.
@@ -33,10 +34,10 @@ func _process(delta: float) -> void:
 		
 	#shooting hopefully
 	if Input.is_action_pressed("shoot"):
-		if canShoot == true:
+		if shot_timer == SHOT_READY:
 			shoot()
 		else:
-			pass
+			shot_timer += 1
 		
 		
 	if velocity.length() > 0:
@@ -55,7 +56,7 @@ func _process(delta: float) -> void:
 		$Player/Taiga.animation = "right"
 		
 	
-func shoot():
+func shoot(): #function for shooting bullets
 	var b1 = TaigaBullet_scene.instantiate()
 	var b2 = TaigaBullet_scene.instantiate()
 	var b3 = TaigaBullet_scene.instantiate()
@@ -65,10 +66,9 @@ func shoot():
 	b1.transform = $Player/ShotStart1.global_transform
 	b2.transform = $Player/ShotStart2.global_transform
 	b3.transform = $Player/ShotStart3.global_transform
-	$Player/Shot_Cooldown.start()
-	canShoot = false
-
-
-
-func _on_shot_cooldown_timeout() -> void:
-	canShoot = true
+	#$Player/Shot_Cooldown.start()
+	shot_timer = 0
+	
+func on_hit():
+	hit.emit()
+	

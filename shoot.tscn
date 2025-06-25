@@ -1,9 +1,21 @@
-[gd_scene load_steps=7 format=3 uid="uid://djfoodl5l5iym"]
+[gd_scene load_steps=11 format=3 uid="uid://djfoodl5l5iym"]
 
+[ext_resource type="Script" uid="uid://c1q7baegh4odf" path="res://Taiga.gd" id="1_8qd83"]
 [ext_resource type="Texture2D" uid="uid://c4dj3yit7ufdw" path="res://images/taiga/idle.png" id="1_62wml"]
-[ext_resource type="Script" uid="uid://bdv0b5i1amim8" path="res://shoot.gd" id="1_ytqjl"]
-[ext_resource type="Texture2D" uid="uid://p25cmynrcd4c" path="res://images/taiga/move_left.png" id="3_73a0l"]
-[ext_resource type="Texture2D" uid="uid://bhdo2g3wstrxi" path="res://images/taiga/move_right.png" id="4_v5pym"]
+[ext_resource type="Texture2D" uid="uid://dtetv00qrtboj" path="res://images/taiga/movement.png" id="3_t858a"]
+[ext_resource type="Texture2D" uid="uid://c8bdgyakg63wp" path="res://images/taiga/hurtbox.png" id="5_8qd83"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8qd83"]
+atlas = ExtResource("3_t858a")
+region = Rect2(186, 0, 186, 306)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u635w"]
+atlas = ExtResource("3_t858a")
+region = Rect2(0, 0, 186, 306)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_86i5j"]
+atlas = ExtResource("3_t858a")
+region = Rect2(372, 0, 186, 306)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_2l6ss"]
 animations = [{
@@ -17,7 +29,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_73a0l")
+"texture": SubResource("AtlasTexture_8qd83")
 }],
 "loop": true,
 "name": &"left",
@@ -25,7 +37,21 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("4_v5pym")
+"texture": SubResource("AtlasTexture_u635w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8qd83")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86i5j")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_86i5j")
 }],
 "loop": true,
 "name": &"right",
@@ -36,16 +62,19 @@ animations = [{
 radius = 49.5
 height = 244.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_u635w"]
+
 [node name="TaigaNode2D" type="Node2D"]
-script = ExtResource("1_ytqjl")
+script = ExtResource("1_8qd83")
 
 [node name="Player" type="Area2D" parent="."]
 scale = Vector2(0.5, 0.5)
 
 [node name="Taiga" type="AnimatedSprite2D" parent="Player"]
 sprite_frames = SubResource("SpriteFrames_2l6ss")
+animation = &"right"
 
-[node name="Hurtbox" type="CollisionShape2D" parent="Player"]
+[node name="GrazeBox" type="CollisionShape2D" parent="Player"]
 shape = SubResource("CapsuleShape2D_h6m1n")
 
 [node name="ShotStart1" type="Marker2D" parent="Player"]
@@ -59,7 +88,9 @@ rotation = 0.523599
 position = Vector2(-20, -100)
 rotation = -0.523599
 
-[node name="Shot_Cooldown" type="Timer" parent="Player"]
-wait_time = 0.06
+[node name="HurtBox" type="CollisionShape2D" parent="Player"]
+shape = SubResource("CircleShape2D_u635w")
 
-[connection signal="timeout" from="Player/Shot_Cooldown" to="." method="_on_shot_cooldown_timeout"]
+[node name="HurtBoxCircle" type="Sprite2D" parent="Player/HurtBox"]
+scale = Vector2(2.5, 2.5)
+texture = ExtResource("5_8qd83")
