@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://s3yv3f45jkdv"]
+
+[ext_resource type="Texture2D" uid="uid://ce287uib0uai4" path="res://images/Enemies/YinYang.png" id="1_slcv3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f8kff"]
+radius = 5.10392
+
+[node name="Yin_Yang" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Yin_Yang_Sprite" type="Sprite2D" parent="Area2D"]
+texture = ExtResource("1_slcv3")
+
+[node name="HurtBox" type="CollisionShape2D" parent="Area2D"]
+scale = Vector2(10, 10)
+shape = SubResource("CircleShape2D_f8kff")
