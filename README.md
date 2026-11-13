@@ -30,10 +30,10 @@
 <!-- PROJECT LOGO -->
 <br />
 
-<h3 align="center">Fullstack_MiniProject</h3>
+<h3 align="center">ShmupGame</h3>
 
   <p align="center">
-    Application to show an example of backend connections using Pulumi.
+    Personal project for a vertical shooter game.
     <br />
     <a href="https://github.com/commanderchoco/Fullstack_MiniProject"><strong>Explore the docs »</strong></a>
     <br />
@@ -83,7 +83,7 @@ This project uses a front-end terminal to connect to a back-end terminal to rece
 
 ### Built With
 
-* [![Next][Next.js]][Next-url]
+* [Godot](https://godotengine.org/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -95,15 +95,9 @@ This project uses a front-end terminal to connect to a back-end terminal to rece
 Node.js is needed to open the project. 
 
 ### Prerequisites
-Node.js needs t be installed to run the application
-[Download Node Here](https://nodejs.org/en/download)
+Currently there is no executable, so to run the project you need [Godot](https://godotengine.org/).
 
 
-Verify Node.js is installed
-* npm
-  ```sh
-  npm -v
-  ```
 
 ### Installation
 
@@ -111,17 +105,13 @@ Verify Node.js is installed
    ```sh
    git clone https://github.com/commanderchoco/Fullstack_MiniProject.git
    ```
-2. Install NPM packages
-   ```sh
-   npm install
+2. Open the project in Godot
    ```
-3. Run the app
-   ```js
-   npm run start
+   Open Godot > Import Project (ctrl + I) 
    ```
-4. open the page in a browser
-   ```sh
-   http://localhost:3000
+3. Run the project
+   ```
+   Press the play button in the top right or press F5
    ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -143,7 +133,7 @@ Distributed under the GNU GPLv3. See `LICENSE.txt` for more information.
 
 Matthew Long - [@bluebandannadog](https://bsky.app/profile/bluebandannadog.bsky.social) - matthewclong95@gmail.com
 
-Project Link: [https://github.com/commanderchoco/Fullstack_MiniProject](https://github.com/commanderchoco/Fullstack_MiniProject)
+Project Link: [https://github.com/commanderchoco/shmupgame](https://github.com/commanderchoco/shmupgame)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
