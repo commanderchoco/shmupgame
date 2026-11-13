@@ -74,7 +74,7 @@
 
 <!-- ABOUT THE PROJECT -->
 ## About The Project
-This project uses a front-end terminal to connect to a back-end terminal to receive messages from the back-end. Currently the back-end only sends one message to the front-end: "Hello from back-end". The purpose of this project is to highlight how front and back-end apps communicate in the most basic form.
+This project is my first Godot project. The purpose of this project was to learn how Godot works after working with the tutorial. Currently, users can move the player character around the play area, fire projectiles, and defeat enemies. There is a very basic lives and health system implemented, so players will game over if they touch the enemies. A basic respawn system is implemented so that the enemies reappear every 3 seconds after they are defeated.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
